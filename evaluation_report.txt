@@ -1,0 +1,19 @@
+Public sample evaluation
+========================
+samples: 25
+affordability_status: 18/25 exact
+recommended_payment_method: 20/25 exact
+payment_plan: 14/25 exact
+earliest_date_for_full_payment: 9/25 exact
+spending_changes_needed: 22/25 exact
+amount_safe_to_pay: 3/25 within 0.01
+request_01: predicted not_affordable/not_recommended vs affordable_now/full_payment
+request_02: predicted affordable_with_plan/installments vs affordable_with_plan/installments
+request_03: predicted affordable_later/wait vs affordable_later/wait
+request_04: predicted affordable_later/wait vs affordable_later/wait
+request_05: predicted affordable_now/full_payment vs not_affordable/not_recommended
+request_06: predicted affordable_now/full_payment vs affordable_with_plan/full_payment
+request_07: predicted affordable_with_plan/installments vs affordable_with_plan/installments
+request_08: predicted affordable_later/wait vs affordable_later/wait
+request_10: predicted not_affordable/not_recommended vs not_affordable/not_recommended
+request_11: predicted affordable_now/full_payment vs affordable_with_plan/full_payment

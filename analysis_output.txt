@@ -1,0 +1,341 @@
+
+==========================================================================================
+FINANCIAL EVENTS ANALYSIS
+==========================================================================================
+
+------------------------------------------------------------------------------------------
+COLUMN: event_type
+------------------------------------------------------------------------------------------
+event_type
+expense                 20525
+subscription             2488
+income                   1696
+debt_payment              567
+investment_purchase        29
+refund                     22
+investment_valuation       10
+investment_sale             5
+
+------------------------------------------------------------------------------------------
+COLUMN: category
+------------------------------------------------------------------------------------------
+category
+groceries              5812
+transport              5626
+dining                 3479
+salary                 1690
+utilities              1452
+rent                   1355
+cloud_storage           833
+shopping                813
+streaming               683
+debt_repayment          553
+entertainment           521
+insurance               456
+music_subscription      451
+healthcare              356
+delivery_membership     351
+education               306
+housing                 246
+gym                     170
+family_support          125
+investment               44
+work_expense             14
+windfall                  6
+
+------------------------------------------------------------------------------------------
+COLUMN: direction
+------------------------------------------------------------------------------------------
+direction
+debit       23609
+credit       1723
+non_cash       10
+
+------------------------------------------------------------------------------------------
+COLUMN: status
+------------------------------------------------------------------------------------------
+status
+settled       25148
+pending          71
+scheduled        70
+cancelled        22
+failed           21
+unrealized       10
+
+------------------------------------------------------------------------------------------
+COLUMN: flexibility
+------------------------------------------------------------------------------------------
+flexibility
+fixed                     21138
+reducible                  2682
+stoppable                  1297
+reducible_or_stoppable      225
+
+------------------------------------------------------------------------------------------
+COLUMN: currency
+------------------------------------------------------------------------------------------
+currency
+INR    6457
+EUR    5585
+IDR    4992
+ZAR    4489
+USD    3819
+
+==========================================================================================
+MISSING AMOUNTS
+==========================================================================================
+
+Number of events with missing amounts: 16
+
+Events with missing amounts:
+   event_id  user_id event_type                        description   category currency event_date    status
+  event_253  user_03     income             August 2019 net salary     salary      IDR 2019-08-31   settled
+ event_1442  user_16    expense           Outstanding rent balance       rent      INR 2023-08-11 scheduled
+ event_1545  user_17    expense Bulk groceries and pantry purchase  groceries      INR 2026-02-27   settled
+ event_1700  user_19    expense            Delivered grocery order  groceries      INR 2024-09-03   settled
+ event_1786  user_20    expense           Outstanding telecom bill  utilities      INR 2026-02-06   pending
+ event_3051  user_33    expense                Grocery tax invoice  groceries      INR 2026-01-06   settled
+ event_3231  user_35    expense             Restaurant tax invoice     dining      INR 2025-10-29   settled
+ event_4535  user_48    expense       Property maintenance invoice    housing      INR 2026-07-24   settled
+ event_5170  user_55    expense                     Water bill due  utilities      INR 2026-06-07   settled
+ event_6033  user_64    expense          Large grocery tax invoice  groceries      INR 2024-06-03   pending
+ event_6859  user_73    expense              Hospital bill payable healthcare      INR 2023-01-19 scheduled
+ event_7307  user_78    expense                          Taxi fare  transport      USD 2025-10-01   settled
+ event_7941  user_84    expense                     Tote bag order   shopping      INR 2026-04-03   settled
+ event_9421 user_101    expense                  Pharmacy purchase healthcare      INR 2025-11-02   settled
+ event_9806 user_105    expense            Airline ticket purchase  transport      INR 2026-06-07   settled
+event_10521 user_113    expense         EV charging wallet payment  transport      INR 2026-09-03   settled
+
+==========================================================================================
+LINKED EVENTS
+==========================================================================================
+
+Number of events with linked_event_id: 58
+
+First 20 linked events:
+   event_id  user_id           event_type                    description     amount     status linked_event_id
+   event_99  user_01               refund   Settled card charge reversal     583.00    settled        event_98
+  event_101  user_01              expense          Settled card purchase     816.20    settled       event_100
+ event_1544  user_17               refund Employer expense reimbursement   12360.00    settled      event_1543
+ event_1785  user_20               refund        Pending merchant refund    8640.00    pending      event_1784
+ event_1856  user_21 investment_valuation    Current portfolio valuation     270.72 unrealized      event_1855
+ event_1960  user_22 investment_valuation    Current portfolio valuation     369.60 unrealized      event_1959
+ event_2361  user_26               refund   Settled card charge reversal  769500.00    settled      event_2360
+ event_2363  user_26              expense          Settled card purchase 1077300.00    settled      event_2362
+ event_3230  user_35               refund        Pending merchant refund   12960.00    pending      event_3229
+ event_4994  user_53               refund        Pending merchant refund     230.40    pending      event_4993
+ event_5169  user_55         debt_payment   Scheduled bill payment retry   13800.00  scheduled      event_5168
+ event_6290  user_67              expense          Settled card purchase      71.67    settled      event_6289
+ event_6532  user_70 investment_valuation    Current portfolio valuation  121800.00 unrealized      event_6531
+ event_6858  user_73               refund   Settled card charge reversal    3300.00    settled      event_6857
+ event_7186  user_77               refund        Pending merchant refund    8880.00    pending      event_7185
+ event_7306  user_78      investment_sale       Investment sale proceeds   48950.00    settled      event_7305
+ event_8576  user_91         debt_payment   Scheduled bill payment retry     166.00  scheduled      event_8575
+ event_9805 user_105 investment_valuation    Current portfolio valuation   70200.00 unrealized      event_9804
+event_10043 user_108              expense          Settled card purchase    1170.40    settled     event_10042
+event_10802 user_116               refund Employer expense reimbursement    7440.00    settled     event_10801
+
+==========================================================================================
+PAYMENT METHODS
+==========================================================================================
+payment_method
+installments    515
+full_payment    275
+
+==========================================================================================
+PAYMENT OPTION EXAMPLES
+==========================================================================================
+payment_option_id request_id payment_method  payment_amount  number_of_payments first_payment_date  payment_frequency_days  financing_fee  total_payable_amount
+payment_option_01 request_01   full_payment        25256.00                   1         2024-03-03                     NaN           0.00              25256.00
+payment_option_02 request_01   installments         1852.11                  15         2024-03-06                    30.0        2525.65              27781.65
+payment_option_03 request_01   installments         4546.08                   6         2024-03-10                    31.0        2020.48              27276.48
+payment_option_04 request_01   installments         1283.85                  24         2024-03-17                    28.0        5556.40              30812.40
+payment_option_05 request_02   installments     15952906.67                   3         2025-08-08                    30.0     1840720.01           47858720.01
+payment_option_06 request_02   full_payment     46018000.00                   1         2025-08-05                     NaN           0.00           46018000.00
+payment_option_07 request_02   installments      2914473.33                  18         2025-08-12                    31.0     6442519.94           52460519.94
+payment_option_08 request_03   full_payment      5491000.00                   1         2019-09-03                     NaN           0.00            5491000.00
+payment_option_09 request_03   installments       308541.90                  21         2019-09-17                    28.0      988379.90            6479379.90
+payment_option_10 request_03   installments       279125.83                  24         2019-09-06                    31.0     1208019.92            6699019.92
+payment_option_11 request_04   full_payment     12693000.00                   1         2024-06-04                     NaN           0.00           12693000.00
+payment_option_12 request_04   installments       875817.00                  15         2024-06-04                    30.0      444255.00           13137255.00
+payment_option_13 request_05   full_payment        15488.00                   1         2025-11-06                     NaN           0.00              15488.00
+payment_option_14 request_05   installments          980.91                  18         2025-11-09                    31.0        2168.38              17656.38
+payment_option_15 request_05   installments          787.31                  24         2025-11-20                    30.0        3407.44              18895.44
+payment_option_16 request_06   full_payment          620.40                   1         2026-01-03                     NaN           0.00                620.40
+payment_option_17 request_06   installments           34.86                  21         2026-01-10                    28.0         111.66                732.06
+payment_option_18 request_06   installments          111.67                   6         2026-01-17                    30.0          49.62                670.02
+payment_option_19 request_07   installments        68432.00                   3         2024-09-12                    28.0        7896.00             205296.00
+payment_option_20 request_07   full_payment       197400.00                   1         2024-09-05                     NaN           0.00             197400.00
+
+==========================================================================================
+MESSAGE SOURCE TYPES
+==========================================================================================
+source_type
+employer             126
+service_provider      31
+financial_service     23
+bank                  18
+merchant              17
+
+==========================================================================================
+ALL SAMPLE REQUEST OUTPUTS
+==========================================================================================
+request_id user_id  requested_amount  amount_safe_to_pay affordability_status recommended_payment_method                                                         payment_plan earliest_date_for_full_payment                    spending_changes_needed
+request_01 user_01          25256.00            25256.00       affordable_now               full_payment                                                     2024-03-03:25256                     2024-03-03                                       none
+request_02 user_02       46018000.00         17229139.20 affordable_with_plan               installments 2025-08-08:15952906.67|2025-09-07:15952906.67|2025-10-07:15952906.67                     2025-09-15                                       none
+request_03 user_03        5491000.00           873000.00     affordable_later                       wait                                                   2019-11-15:5491000                     2019-11-15                                       none
+request_04 user_04       12693000.00          8401800.00     affordable_later                       wait                                                  2024-06-15:12693000                     2024-06-15                                       none
+request_05 user_05          15488.00              737.00       not_affordable            not_recommended                                                                 none                            NaN                                       none
+request_06 user_06            620.40              603.30 affordable_with_plan               full_payment                                                    2026-01-03:620.40                     2026-01-15                             stop:event_476
+request_07 user_07         197400.00            87170.56 affordable_with_plan               installments                   2024-09-12:68432|2024-10-10:68432|2024-11-07:68432                     2024-10-23                                       none
+request_08 user_08            996.60              284.57     affordable_later                       wait                                                    2025-04-15:996.60                     2025-04-15                                       none
+request_09 user_09            166.61              166.61       affordable_now               full_payment                                                    2026-07-04:166.61                     2026-07-04                                       none
+request_10 user_10         266700.00            12700.00       not_affordable            not_recommended                                                                 none                            NaN                                       none
+request_11 user_11       13110000.00         12510645.00 affordable_with_plan               full_payment                                                  2025-05-03:13110000                     2025-07-15                 reduce_to:event_989:665950
+request_12 user_12          65164.00            65164.00 affordable_with_plan               installments          2026-04-19:22590.19|2026-05-20:22590.19|2026-06-20:22590.19                     2026-04-05                                       none
+request_13 user_13            941.60              433.40     affordable_later                       wait                                                    2024-05-15:941.60                     2024-05-15                                       none
+request_14 user_14           5414.20              597.74       not_affordable            not_recommended                                                                 none                            NaN                                       none
+request_15 user_15           3685.00               83.05       not_affordable            not_recommended                                                                 none                            NaN                                       none
+request_16 user_16         122500.00           122500.00       affordable_now               full_payment                                                    2023-08-12:122500                     2023-08-12                                       none
+request_17 user_17         274600.00           243849.58 affordable_with_plan               installments          2026-03-01:95194.67|2026-03-31:95194.67|2026-04-30:95194.67                     2026-03-15                                       none
+request_18 user_18           3246.10              462.00     affordable_later                       wait                                                   2026-09-15:3246.10                     2026-09-15                                       none
+request_19 user_19          39660.00            28820.00 affordable_with_plan            partial_payment                                    2024-09-04:28820|2024-09-15:10840                     2024-09-15                                       none
+request_20 user_20         303700.00             5400.00       not_affordable            not_recommended                                                                 none                            NaN                                       none
+request_21 user_21           1574.40             1543.35 affordable_with_plan               full_payment                                                   2026-04-03:1574.40                     2026-04-15 stop:event_1815|reduce_to:event_1816:23.50
+request_22 user_22            731.50              475.46 affordable_with_plan               installments                2024-12-08:253.59|2025-01-05:253.59|2025-02-02:253.59                     2025-01-15                                       none
+request_23 user_23          38016.00             9152.00     affordable_later                       wait                                                     2025-07-15:38016                     2025-07-15                                       none
+request_24 user_24         109600.00            13420.00       not_affordable            not_recommended                                                                 none                            NaN                                       none
+request_25 user_25       60496000.00          1425000.00       not_affordable            not_recommended                                                                 none                            NaN                                       none
+
+==========================================================================================
+SAMPLE DECISION EXPLANATIONS
+==========================================================================================
+
+REQUEST: request_01
+STATUS: affordable_now
+METHOD: full_payment
+EXPLANATION: Pay ZAR 25,256 today. This leaves at least ZAR 18,000 available over the next 90 days.
+
+REQUEST: request_02
+STATUS: affordable_with_plan
+METHOD: installments
+EXPLANATION: Use 3 installments of IDR 15,952,906.67, starting 8 August 2025. This leaves at least IDR 29,158,400 available.
+
+REQUEST: request_03
+STATUS: affordable_later
+METHOD: wait
+EXPLANATION: Pay IDR 5,491,000 in full on 15 November 2019. Paying earlier would take the balance below the IDR 2,668,700 minimum.
+
+REQUEST: request_04
+STATUS: affordable_later
+METHOD: wait
+EXPLANATION: Wait until 15 June 2024, then pay IDR 12,693,000 in full. Paying sooner would put the IDR 30,686,600 minimum at risk.
+
+REQUEST: request_05
+STATUS: not_affordable
+METHOD: not_recommended
+EXPLANATION: Do not make this payment by 12 January 2026. None of the available options keeps the ZAR 13,100 minimum protected.
+
+REQUEST: request_06
+STATUS: affordable_with_plan
+METHOD: full_payment
+EXPLANATION: Stop the family streaming plan, then pay EUR 620.40 today. This leaves at least EUR 800 available.
+
+REQUEST: request_07
+STATUS: affordable_with_plan
+METHOD: installments
+EXPLANATION: Use 3 installments of INR 68,432, starting 12 September 2024. This leaves at least INR 93,000 available.
+
+REQUEST: request_08
+STATUS: affordable_later
+METHOD: wait
+EXPLANATION: Pay EUR 996.60 in full on 15 April 2025. Paying earlier would take the balance below the EUR 800 minimum.
+
+REQUEST: request_09
+STATUS: affordable_now
+METHOD: full_payment
+EXPLANATION: Pay EUR 166.61 today. This keeps the EUR 600 minimum available over the next 90 days.
+
+REQUEST: request_10
+STATUS: not_affordable
+METHOD: not_recommended
+EXPLANATION: Do not make this payment by 10 February 2025. None of the available options keeps the INR 225,400 minimum protected.
+
+REQUEST: request_11
+STATUS: affordable_with_plan
+METHOD: full_payment
+EXPLANATION: Reduce the weekend food delivery to IDR 665,950, then pay IDR 13,110,000 today. This leaves at least IDR 34,140,600 available.
+
+REQUEST: request_12
+STATUS: affordable_with_plan
+METHOD: installments
+EXPLANATION: Use 3 installments of ZAR 22,590.19, starting 19 April 2026. This leaves at least ZAR 43,200 available.
+
+REQUEST: request_13
+STATUS: affordable_later
+METHOD: wait
+EXPLANATION: Pay EUR 941.60 in full on 15 May 2024. Paying earlier would take the balance below the EUR 1,300 minimum.
+
+REQUEST: request_14
+STATUS: not_affordable
+METHOD: not_recommended
+EXPLANATION: Do not proceed with the EUR 5,414.20 request. Although EUR 597.74 is available today, the full amount cannot be completed safely within 90 days.
+
+REQUEST: request_15
+STATUS: not_affordable
+METHOD: not_recommended
+EXPLANATION: Do not make this payment by 1 February 2026. None of the available options keeps the EUR 1,200 minimum protected.
+
+REQUEST: request_16
+STATUS: affordable_now
+METHOD: full_payment
+EXPLANATION: Pay INR 122,500 today. This leaves at least INR 122,400 available over the next 90 days.
+
+REQUEST: request_17
+STATUS: affordable_with_plan
+METHOD: installments
+EXPLANATION: Use 3 installments of INR 95,194.67, starting 1 March 2026. This leaves at least INR 166,100 available.
+
+REQUEST: request_18
+STATUS: affordable_later
+METHOD: wait
+EXPLANATION: Pay EUR 3,246.10 in full on 15 September 2026. Paying earlier would take the balance below the EUR 1,400 minimum.
+
+REQUEST: request_19
+STATUS: affordable_with_plan
+METHOD: partial_payment
+EXPLANATION: Pay INR 28,820 today and the remaining INR 10,840 on 15 September 2024. This completes the full request and keeps the INR 92,800 minimum protected.
+
+REQUEST: request_20
+STATUS: not_affordable
+METHOD: not_recommended
+EXPLANATION: Do not make this payment by 22 February 2026. None of the available options keeps the INR 64,500 minimum protected.
+
+REQUEST: request_21
+STATUS: affordable_with_plan
+METHOD: full_payment
+EXPLANATION: Stop the online backup subscription and reduce the streaming subscription to USD 23.50, then pay USD 1,574.40 today. This leaves at least USD 1,800 available.
+
+REQUEST: request_22
+STATUS: affordable_with_plan
+METHOD: installments
+EXPLANATION: Use 3 installments of EUR 253.59, starting 8 December 2024. This leaves at least EUR 500 available.
+
+REQUEST: request_23
+STATUS: affordable_later
+METHOD: wait
+EXPLANATION: Pay ZAR 38,016 in full on 15 July 2025. Paying earlier would take the balance below the ZAR 27,000 minimum.
+
+REQUEST: request_24
+STATUS: not_affordable
+METHOD: not_recommended
+EXPLANATION: Do not proceed with the INR 109,600 request. Although INR 13,420 is available today, the full amount cannot be completed safely within 90 days.
+
+REQUEST: request_25
+STATUS: not_affordable
+METHOD: not_recommended
+EXPLANATION: Do not make this payment by 17 April 2024. None of the available options keeps the IDR 23,379,100 minimum protected.
+
+==========================================================================================
+ANALYSIS COMPLETE
+==========================================================================================
